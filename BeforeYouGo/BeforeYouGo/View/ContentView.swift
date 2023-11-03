@@ -15,11 +15,17 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
+                ForEach(Array(items.enumerated()), id: \.element) { index, item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        VStack {
+                            Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                            Button("Back", action: {})
+                        }
                     } label: {
                         Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                            .contextMenu {
+                                menuItems(index: index)
+                            }
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -48,6 +54,18 @@ struct ContentView: View {
             for index in offsets {
                 modelContext.delete(items[index])
             }
+        }
+    }
+
+    private func menuItems(index: Int) -> some View {
+        Group {
+            Button(action: {
+                withAnimation {
+                    modelContext.delete(items[index])
+                }
+            }, label: {
+                Text("🗑️ Delete")
+            })
         }
     }
 }

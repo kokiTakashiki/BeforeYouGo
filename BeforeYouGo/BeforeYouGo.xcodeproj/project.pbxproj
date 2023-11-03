@@ -15,6 +15,8 @@
 		9A84BAE92AF4B79300A9050E /* BeforeYouGoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BAE82AF4B79300A9050E /* BeforeYouGoTests.swift */; };
 		9A84BAF32AF4B79300A9050E /* BeforeYouGoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BAF22AF4B79300A9050E /* BeforeYouGoUITests.swift */; };
 		9A84BAF52AF4B79300A9050E /* BeforeYouGoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BAF42AF4B79300A9050E /* BeforeYouGoUITestsLaunchTests.swift */; };
+		9A84BB022AF4B94A00A9050E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB012AF4B94A00A9050E /* RootView.swift */; };
+		9A84BB042AF50DE600A9050E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9A84BB032AF50DE600A9050E /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		9A84BAEE2AF4B79300A9050E /* BeforeYouGoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeforeYouGoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A84BAF22AF4B79300A9050E /* BeforeYouGoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeYouGoUITests.swift; sourceTree = "<group>"; };
 		9A84BAF42AF4B79300A9050E /* BeforeYouGoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeYouGoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9A84BB012AF4B94A00A9050E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		9A84BB032AF50DE600A9050E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				9A84BAD52AF4B79100A9050E /* BeforeYouGoApp.swift */,
-				9A84BAD72AF4B79100A9050E /* ContentView.swift */,
-				9A84BAD92AF4B79100A9050E /* Item.swift */,
+				9A84BB052AF50EC900A9050E /* View */,
 				9A84BADB2AF4B79300A9050E /* Assets.xcassets */,
+				9A84BB032AF50DE600A9050E /* Localizable.xcstrings */,
 				9A84BADD2AF4B79300A9050E /* Preview Content */,
 			);
 			path = BeforeYouGo;
@@ -128,6 +132,16 @@
 				9A84BAF42AF4B79300A9050E /* BeforeYouGoUITestsLaunchTests.swift */,
 			);
 			path = BeforeYouGoUITests;
+			sourceTree = "<group>";
+		};
+		9A84BB052AF50EC900A9050E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A84BB012AF4B94A00A9050E /* RootView.swift */,
+				9A84BAD72AF4B79100A9050E /* ContentView.swift */,
+				9A84BAD92AF4B79100A9050E /* Item.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +250,7 @@
 			files = (
 				9A84BADF2AF4B79300A9050E /* Preview Assets.xcassets in Resources */,
 				9A84BADC2AF4B79300A9050E /* Assets.xcassets in Resources */,
+				9A84BB042AF50DE600A9050E /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A84BB022AF4B94A00A9050E /* RootView.swift in Sources */,
 				9A84BAD82AF4B79100A9050E /* ContentView.swift in Sources */,
 				9A84BADA2AF4B79100A9050E /* Item.swift in Sources */,
 				9A84BAD62AF4B79100A9050E /* BeforeYouGoApp.swift in Sources */,
@@ -429,6 +445,7 @@
 				DEVELOPMENT_TEAM = GY636G2259;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -455,6 +472,7 @@
 				DEVELOPMENT_TEAM = GY636G2259;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (

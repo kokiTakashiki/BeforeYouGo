@@ -1,0 +1,41 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "☀️Weather" : {
+
+    },
+    "🗑️ Delete" : {
+
+    },
+    "Add Item" : {
+
+    },
+    "Back" : {
+
+    },
+    "Item at %@" : {
+
+    },
+    "Select an item" : {
+
+    },
+    "Settings" : {
+
+    },
+    "Test" : {
+
+    },
+    "Weather" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "天気"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

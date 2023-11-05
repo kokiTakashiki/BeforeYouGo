@@ -1,19 +1,11 @@
 //
-//  CurrentWeatherInfo.swift
+//  Weather.swift
 //  BeforeYouGo
 //
 //  Created by takedatakashiki on 2023/11/04.
 //
 
 import Foundation
-
-struct CurrentWeatherInfo {
-    let time: String
-    let temperature: Float
-    let relativehumidity: Int
-    let isDay: Bool // day: 1, not day(night): 0
-    let weathercode: Int
-}
 
 enum Weather: String, CaseIterable {
     case clearSky = "Weather.0.ClearSky" // ☀️0
@@ -37,7 +29,7 @@ enum Weather: String, CaseIterable {
 }
 
 extension Weather {
-    static func codeTo(_ weathercode: Int) -> Self {
+    static func codeTo(_ weathercode: Int?) -> Self {
         switch weathercode {
         case 0: return .clearSky
         case 1: return .mainlyClear

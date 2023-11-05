@@ -27,10 +27,10 @@ public extension WeatherForecastResponse {
     struct CurrentUnits: Decodable {
         public let time: String
         public let interval: String
-        public let temperature_2m: String
-        public let relativehumidity_2m: String
+        public let temperature_2m: String?
+        public let relativehumidity_2m: String?
         public let is_day: String
-        public let weathercode: String
+        public let weathercode: String?
     }
     
     struct Current: Decodable {
@@ -44,18 +44,21 @@ public extension WeatherForecastResponse {
     
     struct HourlyUnits: Decodable {
         public let time: String
+        public let precipitation_probability: String
         public let temperature_2m: String
         public let weathercode: String
     }
     
     struct Hourly: Decodable {
         public let time: [String]
-        public let temperature_2m: [Float]
-        public let weathercode: [Int]
+        public let precipitation_probability: [Int?]
+        public let temperature_2m: [Float?]
+        public let weathercode: [Int?]
     }
     
     struct DailyUnits: Decodable {
         public let time: String
+        public let precipitation_probability_max: String
         public let weathercode: String
         public let temperature_2m_min: String
         public let temperature_2m_max: String
@@ -63,8 +66,9 @@ public extension WeatherForecastResponse {
     
     struct Daily: Decodable {
         public let time: [String]
-        public let weathercode: [Int]
-        public let temperature_2m_min: [Float]
-        public let temperature_2m_max: [Float]
+        public let precipitation_probability_max: [Int?]
+        public let weathercode: [Int?]
+        public let temperature_2m_min: [Float?]
+        public let temperature_2m_max: [Float?]
     }
 }

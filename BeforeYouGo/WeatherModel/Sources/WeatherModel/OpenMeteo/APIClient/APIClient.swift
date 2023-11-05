@@ -53,8 +53,8 @@ extension OpenMeteo.APIClient {
                 longitude: 139.4356,
                 forecastDays: 16,
                 current: "temperature_2m,relativehumidity_2m,is_day,weathercode",
-                hourly: "temperature_2m,weathercode",
-                daily: "weathercode,temperature_2m_min,temperature_2m_max"
+                hourly: "precipitation_probability,temperature_2m,weathercode",
+                daily: "precipitation_probability_max,weathercode,temperature_2m_min,temperature_2m_max"
             )
         )
     }
@@ -69,6 +69,7 @@ extension DataRequest {
                     do {
                         continuation.resume(returning: try JSONDecoder().decode(T.self, from: element!))
                     } catch {
+                        print(error)
                         continuation.resume(throwing: APIServiceError.decodingError)
                     }
                 case .failure(let error):

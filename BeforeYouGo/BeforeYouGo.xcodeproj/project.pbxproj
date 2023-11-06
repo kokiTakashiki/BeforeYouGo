@@ -26,6 +26,7 @@
 		9A84BB192AF7868C00A9050E /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB182AF7868C00A9050E /* WeatherView.swift */; };
 		9A84BB1B2AF793B500A9050E /* HourlyWeatherItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB1A2AF793B500A9050E /* HourlyWeatherItemView.swift */; };
 		9A84BB1D2AF7A77800A9050E /* DailyWeatherItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB1C2AF7A77800A9050E /* DailyWeatherItemView.swift */; };
+		9ABA26ED2AF91C300098193E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9ABA26EC2AF91C300098193E /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ABA26ED2AF91C300098193E /* Kingfisher in Frameworks */,
 				9A84BB092AF51B7300A9050E /* WeatherModel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +216,7 @@
 			name = BeforeYouGo;
 			packageProductDependencies = (
 				9A84BB082AF51B7300A9050E /* WeatherModel */,
+				9ABA26EC2AF91C300098193E /* Kingfisher */,
 			);
 			productName = BeforeYouGo;
 			productReference = 9A84BAD22AF4B79100A9050E /* BeforeYouGo.app */;
@@ -290,6 +293,7 @@
 			mainGroup = 9A84BAC92AF4B79100A9050E;
 			packageReferences = (
 				9A84BB072AF51B7300A9050E /* XCLocalSwiftPackageReference "WeatherModel" */,
+				9ABA26EB2AF91C300098193E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 9A84BAD32AF4B79100A9050E /* Products */;
 			projectDirPath = "";
@@ -689,10 +693,26 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		9ABA26EB2AF91C300098193E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		9A84BB082AF51B7300A9050E /* WeatherModel */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WeatherModel;
+		};
+		9ABA26EC2AF91C300098193E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9ABA26EB2AF91C300098193E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

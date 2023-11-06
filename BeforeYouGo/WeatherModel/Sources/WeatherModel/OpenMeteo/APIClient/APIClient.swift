@@ -53,6 +53,9 @@ extension OpenMeteo.APIClient {
                 latitude: pos.latitude,
                 longitude: pos.longitude,
                 forecastDays: 11,
+                current: "precipitation,temperature_2m,relativehumidity_2m,is_day,weathercode",
+                hourly: "precipitation,precipitation_probability,temperature_2m,weathercode",
+                daily: "precipitation_sum,precipitation_probability_max,weathercode,temperature_2m_min,temperature_2m_max"
             )
         )
     }

@@ -45,13 +45,16 @@ struct ForecastUseCase: ForecastUseCaseProtocol {
                     current: WeatherInfo.Current(
                         time: result.current.time,
                         temperature: result.current.temperature_2m,
-                        relativehumidity: result.current.relativehumidity_2m,
+                        relativehumidity: result.current.relativehumidity_2m, 
+                        precipitation: result.current.precipitation,
                         isDay: result.current.is_day == 1,
                         weather: Weather.codeTo(result.current.weathercode)
                     ),
                     hourly: result.hourly.time.enumerated().map {
                         WeatherInfo.Hourly(
                             time: $0.element, 
+                            precipitation: result.hourly.precipitation
+                                .indices.contains($0.offset) ? result.hourly.precipitation[$0.offset] : nil,
                             precipitationProbability: result.hourly.precipitation_probability
                                 .indices.contains($0.offset) ? result.hourly.precipitation_probability[$0.offset] : nil,
                             temperature: result.hourly.temperature_2m
@@ -63,10 +66,16 @@ struct ForecastUseCase: ForecastUseCaseProtocol {
                     daily: result.daily.time.enumerated().map {
                         WeatherInfo.Daily(
                             time: $0.element, 
-                            precipitationProbabilityMax: result.daily.precipitation_probability_max[$0.offset],
-                            weather: Weather.codeTo(result.daily.weathercode[$0.offset]),
-                            temperatureMin: result.daily.temperature_2m_min[$0.offset],
-                            temperatureMax: result.daily.temperature_2m_max[$0.offset]
+                            precipitationSum: result.daily.precipitation_sum
+                                .indices.contains($0.offset) ? result.daily.precipitation_sum[$0.offset] : nil,
+                            precipitationProbabilityMax: result.daily.precipitation_probability_max
+                                .indices.contains($0.offset) ? result.daily.precipitation_probability_max[$0.offset] : nil,
+                            weather: result.daily.weathercode
+                                .indices.contains($0.offset) ? Weather.codeTo(result.daily.weathercode[$0.offset]) : nil,
+                            temperatureMin: result.daily.temperature_2m_min
+                                .indices.contains($0.offset) ? result.daily.temperature_2m_min[$0.offset] : nil,
+                            temperatureMax: result.daily.temperature_2m_max
+                                .indices.contains($0.offset) ? result.daily.temperature_2m_max[$0.offset] : nil
                         )
                     }
                 )

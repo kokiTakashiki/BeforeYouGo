@@ -18,12 +18,14 @@ extension WeatherInfo {
         let time: String
         let temperature: Float?
         let relativehumidity: Int?
+        let precipitation: Float?
         let isDay: Bool // day: 1, not day(night): 0
         let weather: Weather?
     }
 
     struct Hourly {
         let time: String
+        let precipitation: Float?
         let precipitationProbability: Int?
         let temperature: Float?
         let weather: Weather?
@@ -31,6 +33,7 @@ extension WeatherInfo {
     
     struct Daily {
         let time: String
+        let precipitationSum: Float?
         let precipitationProbabilityMax: Int?
         let weather: Weather?
         let temperatureMin: Float?

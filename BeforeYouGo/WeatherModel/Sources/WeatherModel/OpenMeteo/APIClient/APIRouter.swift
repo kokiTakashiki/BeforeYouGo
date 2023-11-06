@@ -72,15 +72,6 @@ extension OpenMeteo.APIRouter: URLRequestConvertible {
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
         urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         
-        // Parameters
-//        if let parameters = parameters {
-//            do {
-//                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
-//            } catch {
-//                throw AFError.parameterEncodingFailed(reason: .jsonEncodingFailed(error: error))
-//            }
-//        }
-        
         return try URLEncoding.default.encode(urlRequest, with: parameters)
     }
 }

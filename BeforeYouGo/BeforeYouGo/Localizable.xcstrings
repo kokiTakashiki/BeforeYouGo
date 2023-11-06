@@ -1,7 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "°C" : {
+
+    },
     "🗑️ Delete" : {
+
+    },
+    "1時間ごとの天気" : {
+
+    },
+    "11/05" : {
 
     },
     "Add Item" : {
@@ -13,16 +22,42 @@
     "Item at %@" : {
 
     },
+    "No daily weather" : {
+
+    },
+    "No hourly weather" : {
+
+    },
+    "No weather information" : {
+
+    },
+    "reload" : {
+
+    },
     "Select an item" : {
 
     },
     "Settings" : {
 
     },
-    "Test" : {
-
+    "Temperature.unknown" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "unknown"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不明"
+          }
+        }
+      }
     },
-    "Test Call" : {
+    "Test" : {
 
     },
     "Weather" : {
@@ -290,6 +325,12 @@
           }
         }
       }
+    },
+    "今外は" : {
+
+    },
+    "日ごとの天気" : {
+
     }
   },
   "version" : "1.0"

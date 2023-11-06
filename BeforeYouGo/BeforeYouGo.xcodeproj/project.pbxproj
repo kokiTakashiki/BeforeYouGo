@@ -19,7 +19,12 @@
 		9A84BB042AF50DE600A9050E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9A84BB032AF50DE600A9050E /* Localizable.xcstrings */; };
 		9A84BB092AF51B7300A9050E /* WeatherModel in Frameworks */ = {isa = PBXBuildFile; productRef = 9A84BB082AF51B7300A9050E /* WeatherModel */; };
 		9A84BB0F2AF66E3800A9050E /* ForecastUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB0E2AF66E3800A9050E /* ForecastUseCase.swift */; };
-		9A84BB122AF6705C00A9050E /* CurrentWeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB112AF6705C00A9050E /* CurrentWeatherInfo.swift */; };
+		9A84BB122AF6705C00A9050E /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB112AF6705C00A9050E /* Weather.swift */; };
+		9A84BB142AF77C2400A9050E /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB132AF77C2400A9050E /* WeatherInfo.swift */; };
+		9A84BB172AF7828900A9050E /* Collection+safeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB162AF7828900A9050E /* Collection+safeIndex.swift */; };
+		9A84BB192AF7868C00A9050E /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB182AF7868C00A9050E /* WeatherView.swift */; };
+		9A84BB1B2AF793B500A9050E /* HourlyWeatherItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB1A2AF793B500A9050E /* HourlyWeatherItemView.swift */; };
+		9A84BB1D2AF7A77800A9050E /* DailyWeatherItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB1C2AF7A77800A9050E /* DailyWeatherItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +60,12 @@
 		9A84BB032AF50DE600A9050E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9A84BB062AF51B4200A9050E /* WeatherModel */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = WeatherModel; sourceTree = "<group>"; };
 		9A84BB0E2AF66E3800A9050E /* ForecastUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastUseCase.swift; sourceTree = "<group>"; };
-		9A84BB112AF6705C00A9050E /* CurrentWeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherInfo.swift; sourceTree = "<group>"; };
+		9A84BB112AF6705C00A9050E /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		9A84BB132AF77C2400A9050E /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
+		9A84BB162AF7828900A9050E /* Collection+safeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+safeIndex.swift"; sourceTree = "<group>"; };
+		9A84BB182AF7868C00A9050E /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		9A84BB1A2AF793B500A9050E /* HourlyWeatherItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherItemView.swift; sourceTree = "<group>"; };
+		9A84BB1C2AF7A77800A9050E /* DailyWeatherItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +118,7 @@
 		9A84BAD42AF4B79100A9050E /* BeforeYouGo */ = {
 			isa = PBXGroup;
 			children = (
+				9A84BB152AF7825000A9050E /* Extension */,
 				9A84BAD52AF4B79100A9050E /* BeforeYouGoApp.swift */,
 				9A84BB052AF50EC900A9050E /* View */,
 				9A84BB0D2AF66B7700A9050E /* UseCase */,
@@ -150,6 +161,9 @@
 				9A84BB012AF4B94A00A9050E /* RootView.swift */,
 				9A84BAD72AF4B79100A9050E /* ContentView.swift */,
 				9A84BAD92AF4B79100A9050E /* Item.swift */,
+				9A84BB182AF7868C00A9050E /* WeatherView.swift */,
+				9A84BB1A2AF793B500A9050E /* HourlyWeatherItemView.swift */,
+				9A84BB1C2AF7A77800A9050E /* DailyWeatherItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,9 +179,18 @@
 		9A84BB102AF6703500A9050E /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9A84BB112AF6705C00A9050E /* CurrentWeatherInfo.swift */,
+				9A84BB112AF6705C00A9050E /* Weather.swift */,
+				9A84BB132AF77C2400A9050E /* WeatherInfo.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		9A84BB152AF7825000A9050E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9A84BB162AF7828900A9050E /* Collection+safeIndex.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,11 +332,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A84BB022AF4B94A00A9050E /* RootView.swift in Sources */,
+				9A84BB142AF77C2400A9050E /* WeatherInfo.swift in Sources */,
 				9A84BAD82AF4B79100A9050E /* ContentView.swift in Sources */,
-				9A84BB122AF6705C00A9050E /* CurrentWeatherInfo.swift in Sources */,
+				9A84BB172AF7828900A9050E /* Collection+safeIndex.swift in Sources */,
+				9A84BB122AF6705C00A9050E /* Weather.swift in Sources */,
+				9A84BB1D2AF7A77800A9050E /* DailyWeatherItemView.swift in Sources */,
 				9A84BB0F2AF66E3800A9050E /* ForecastUseCase.swift in Sources */,
+				9A84BB192AF7868C00A9050E /* WeatherView.swift in Sources */,
 				9A84BADA2AF4B79100A9050E /* Item.swift in Sources */,
 				9A84BAD62AF4B79100A9050E /* BeforeYouGoApp.swift in Sources */,
+				9A84BB1B2AF793B500A9050E /* HourlyWeatherItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,12 +502,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BeforeYouGo/Preview Content\"";
 				DEVELOPMENT_TEAM = GY636G2259;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "おでかけ前";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
@@ -490,6 +520,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kokiTakashiki.BeforeYouGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -501,12 +534,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BeforeYouGo/Preview Content\"";
 				DEVELOPMENT_TEAM = GY636G2259;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "おでかけ前";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
@@ -517,6 +552,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kokiTakashiki.BeforeYouGo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;

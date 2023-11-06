@@ -15,7 +15,7 @@ enum OpenMeteo {
         case timezone
         case latitude
         case longitude
-        case forecastDays
+        case forecastDays = "forecast_days"
         case current
         case hourly
         case daily

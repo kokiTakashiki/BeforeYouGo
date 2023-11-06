@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import Kingfisher
 
 struct RootView: View {
     var sharedModelContainer: ModelContainer = {
@@ -34,6 +35,10 @@ struct RootView: View {
                     .tabItem { Label("Settings", systemImage: "gear") }
             }
         }
+        .background(
+            KFImage(URL(string: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?crop=entropy&cs=srgb&fm=jpg&ixid=M3w1MjUwMTV8MHwxfHNlYXJjaHwxfHxvZmZpY2V8ZW58MHx8fHwxNjk5Mjc1NjYyfDA&ixlib=rb-4.0.3&q=85"))
+                .resizable()
+        )
     }
 }
 

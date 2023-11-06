@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A8283B22AF83F690072BF83 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8283B12AF83F690072BF83 /* TimerView.swift */; };
 		9A84BAD62AF4B79100A9050E /* BeforeYouGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BAD52AF4B79100A9050E /* BeforeYouGoApp.swift */; };
 		9A84BAD82AF4B79100A9050E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BAD72AF4B79100A9050E /* ContentView.swift */; };
 		9A84BADA2AF4B79100A9050E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BAD92AF4B79100A9050E /* Item.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A8283B12AF83F690072BF83 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		9A84BAD22AF4B79100A9050E /* BeforeYouGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeforeYouGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A84BAD52AF4B79100A9050E /* BeforeYouGoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeYouGoApp.swift; sourceTree = "<group>"; };
 		9A84BAD72AF4B79100A9050E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				9A84BB182AF7868C00A9050E /* WeatherView.swift */,
 				9A84BB1A2AF793B500A9050E /* HourlyWeatherItemView.swift */,
 				9A84BB1C2AF7A77800A9050E /* DailyWeatherItemView.swift */,
+				9A8283B12AF83F690072BF83 /* TimerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				9A84BB172AF7828900A9050E /* Collection+safeIndex.swift in Sources */,
 				9A84BB122AF6705C00A9050E /* Weather.swift in Sources */,
 				9A84BB1D2AF7A77800A9050E /* DailyWeatherItemView.swift in Sources */,
+				9A8283B22AF83F690072BF83 /* TimerView.swift in Sources */,
 				9A84BB0F2AF66E3800A9050E /* ForecastUseCase.swift in Sources */,
 				9A84BB192AF7868C00A9050E /* WeatherView.swift in Sources */,
 				9A84BADA2AF4B79100A9050E /* Item.swift in Sources */,

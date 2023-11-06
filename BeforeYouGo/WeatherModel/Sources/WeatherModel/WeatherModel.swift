@@ -5,8 +5,8 @@ import Foundation
 import AlamofireNetworkActivityLogger
 
 public enum WeatherModel {
-    public static func forecast() async throws -> WeatherForecastResponse {
-        return try await OpenMeteo.APIClient.forecast()
+    public static func forecast(toshi: Toshi) async throws -> WeatherForecastResponse {
+        return try await OpenMeteo.APIClient.forecast(toshi: toshi)
     }
 #if DEBUG
     public static func startLogger() {

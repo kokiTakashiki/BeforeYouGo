@@ -45,16 +45,14 @@ extension OpenMeteo.APIClient {
         }
     }
     
-    static func forecast() async throws -> WeatherForecastResponse {
+    static func forecast(toshi: WeatherModel.Toshi) async throws -> WeatherForecastResponse {
+        let pos = toshi.position()
         return try await performRequest(
             route: OpenMeteo.APIRouter.forecast(
                 timezone: "Asia/Tokyo",
-                latitude: 35.6374,
-                longitude: 139.4356,
-                forecastDays: 16,
-                current: "temperature_2m,relativehumidity_2m,is_day,weathercode",
-                hourly: "precipitation_probability,temperature_2m,weathercode",
-                daily: "precipitation_probability_max,weathercode,temperature_2m_min,temperature_2m_max"
+                latitude: pos.latitude,
+                longitude: pos.longitude,
+                forecastDays: 11,
             )
         )
     }
@@ -70,22 +68,22 @@ extension DataRequest {
                         continuation.resume(returning: try JSONDecoder().decode(T.self, from: element!))
                     } catch {
                         print(error)
-                        continuation.resume(throwing: APIServiceError.decodingError)
+                        continuation.resume(throwing: WeatherModel.APIServiceError.decodingError)
                     }
                 case .failure(let error):
                     switch error.responseCode {
                     case .some(let code) where code == 401:
-                        continuation.resume(throwing:  APIServiceError.networkError)
+                        continuation.resume(throwing:  WeatherModel.APIServiceError.networkError)
                         
                     case .some(let code) where code == 404:
-                        continuation.resume(throwing: APIServiceError.networkError)
+                        continuation.resume(throwing: WeatherModel.APIServiceError.networkError)
                         
                     case .none:
-                        continuation.resume(throwing: APIServiceError.networkError)
+                        continuation.resume(throwing: WeatherModel.APIServiceError.networkError)
                     case .some:
                         break
                     }
-                    continuation.resume(throwing: APIServiceError.networkError)
+                    continuation.resume(throwing: WeatherModel.APIServiceError.networkError)
                 }
             }
         }

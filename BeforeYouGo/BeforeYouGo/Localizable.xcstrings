@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%" : {
+
+    },
+    "%@時点" : {
+
+    },
     "°C" : {
 
     },
@@ -8,9 +14,6 @@
 
     },
     "1時間ごとの天気" : {
-
-    },
-    "11/05" : {
 
     },
     "Add Item" : {
@@ -22,6 +25,9 @@
     "Item at %@" : {
 
     },
+    "mm" : {
+
+    },
     "No daily weather" : {
 
     },
@@ -29,10 +35,44 @@
 
     },
     "No weather information" : {
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "天気情報がありません。"
+          }
+        }
+      }
+    },
+    "Precipitation.unknown" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "unknown"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不明"
+          }
+        }
+      }
+    },
+    "RainInfoCases" : {
 
     },
     "reload" : {
-
+      "localizations" : {
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "再取得"
+          }
+        }
+      }
     },
     "Select an item" : {
 
@@ -326,10 +366,13 @@
         }
       }
     },
-    "今外は" : {
+    "天気" : {
 
     },
     "日ごとの天気" : {
+
+    },
+    "都市" : {
 
     }
   },

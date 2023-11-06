@@ -12,15 +12,34 @@ enum UseCaseError: Error {
     case networkError, decodingError, unknownError
 }
 
+extension ForecastUseCase {
+    enum Toshi {
+        case tama
+        case hakone
+        func exchange() -> WeatherModel.Toshi {
+            switch self {
+            case .tama: return .tama
+            case .hakone: return .hakone
+            }
+        }
+        func title() -> String {
+            switch self {
+            case .tama: return "多摩市"
+            case .hakone: return "箱根"
+            }
+        }
+    }
+}
+
 protocol ForecastUseCaseProtocol {
-    func execute() async -> Result<WeatherInfo, UseCaseError>
+    func execute(toshi: ForecastUseCase.Toshi) async -> Result<WeatherInfo, UseCaseError>
 }
 
 struct ForecastUseCase: ForecastUseCaseProtocol {
-    func execute() async -> Result<WeatherInfo, UseCaseError>{
+    func execute(toshi: ForecastUseCase.Toshi) async -> Result<WeatherInfo, UseCaseError>{
         do{
             WeatherModel.startLogger()
-            let result = try await WeatherModel.forecast()
+            let result = try await WeatherModel.forecast(toshi: toshi.exchange())
             return .success(
                 WeatherInfo(
                     current: WeatherInfo.Current(
@@ -54,9 +73,9 @@ struct ForecastUseCase: ForecastUseCaseProtocol {
             )
         } catch (let error) {
             switch(error){
-            case APIServiceError.decodingError:
+            case WeatherModel.APIServiceError.decodingError:
                 return .failure(.decodingError)
-            case APIServiceError.networkError:
+            case WeatherModel.APIServiceError.networkError:
                 return .failure(.networkError)
             default:
                 return .failure(UseCaseError.unknownError)

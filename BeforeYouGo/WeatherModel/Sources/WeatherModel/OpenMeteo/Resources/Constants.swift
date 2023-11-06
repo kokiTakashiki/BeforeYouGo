@@ -33,6 +33,22 @@ enum ContentType: String {
     case json = "application/json"
 }
 
-public enum APIServiceError: Error{
-    case networkError, decodingError
+extension WeatherModel {
+    public enum APIServiceError: Error{
+        case networkError, decodingError
+    }
+    
+    public enum Toshi {
+        case tama
+        case hakone
+        
+        func position() -> (latitude: Float, longitude: Float) {
+            switch self {
+            case .tama:
+                return (35.6374, 139.4356)
+            case .hakone:
+                return (35.1895, 139.0265)
+            }
+        }
+    }
 }

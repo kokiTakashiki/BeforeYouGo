@@ -53,6 +53,7 @@ struct ForecastUseCase: ForecastUseCaseProtocol {
                     hourly: result.hourly.time.enumerated().map {
                         WeatherInfo.Hourly(
                             time: $0.element, 
+                            isDay: ((result.hourly.is_day[safe: $0.offset] ?? 0) == 1),
                             precipitation: result.hourly.precipitation
                                 .indices.contains($0.offset) ? result.hourly.precipitation[$0.offset] : nil,
                             precipitationProbability: result.hourly.precipitation_probability

@@ -52,9 +52,10 @@ extension Weather {
         }
     }
     
-    func emoji() -> String {
+    func emoji(isDay: Bool = true) -> String {
         switch self {
-        case .clearSky: return "☀️"
+        case .clearSky: 
+            return isDay ? "☀️" : "🌙"
         case .mainlyClear: return "🌤"
         case .partlyCloudy: return "⛅"
         case .overcast: return "☁️"

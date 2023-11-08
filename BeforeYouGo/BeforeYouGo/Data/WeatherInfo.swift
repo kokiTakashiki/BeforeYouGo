@@ -25,6 +25,7 @@ extension WeatherInfo {
 
     struct Hourly {
         let time: String
+        let isDay: Bool // day: 1, not day(night): 0
         let precipitation: Float?
         let precipitationProbability: Int?
         let temperature: Float?

@@ -54,6 +54,7 @@ public extension WeatherForecastResponse {
     
     struct Hourly: Decodable {
         public let time: [String]
+        public let is_day: [Int]
         public let precipitation: [Float?]
         public let precipitation_probability: [Int?]
         public let temperature_2m: [Float?]

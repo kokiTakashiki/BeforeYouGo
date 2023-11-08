@@ -10,6 +10,8 @@ import SwiftData
 import Kingfisher
 
 struct RootView: View {
+    @State private var environment = BeforeYouGoAppEnvironment()
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -26,7 +28,7 @@ struct RootView: View {
     var body: some View {
         NavigationView {
             TabView {
-                WeatherView()
+                WeatherView(environment: environment)
                     .tabItem { Label("Weather", systemImage: "newspaper.fill") }
                 ContentView()
                     .modelContainer(sharedModelContainer)
@@ -35,10 +37,16 @@ struct RootView: View {
                     .tabItem { Label("Settings", systemImage: "gear") }
             }
         }
-        .background(
-            KFImage(URL(string: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?crop=entropy&cs=srgb&fm=jpg&ixid=M3w1MjUwMTV8MHwxfHNlYXJjaHwxfHxvZmZpY2V8ZW58MHx8fHwxNjk5Mjc1NjYyfDA&ixlib=rb-4.0.3&q=85"))
-                .resizable()
-        )
+        .background {
+            if let weatherInfo = environment.weatherInfo,
+               weatherInfo.current.isDay {
+                KFImage(URL(string: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?crop=entropy&cs=srgb&fm=jpg&ixid=M3w1MjUwMTV8MHwxfHNlYXJjaHwxfHxvZmZpY2V8ZW58MHx8fHwxNjk5Mjc1NjYyfDA&ixlib=rb-4.0.3&q=85"))
+                    .resizable()
+            } else {
+                KFImage(URL(string: "https://images.unsplash.com/photo-1488866022504-f2584929ca5f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w1MjUwMTV8MHwxfHNlYXJjaHwzfHxuaWdodHxlbnwwfHx8fDE2OTkzNTE3MTF8MA&ixlib=rb-4.0.3&q=85"))
+                    .resizable()
+            }
+        }
     }
 }
 

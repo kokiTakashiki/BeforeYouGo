@@ -26,6 +26,7 @@
 		9A84BB192AF7868C00A9050E /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB182AF7868C00A9050E /* WeatherView.swift */; };
 		9A84BB1B2AF793B500A9050E /* HourlyWeatherItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB1A2AF793B500A9050E /* HourlyWeatherItemView.swift */; };
 		9A84BB1D2AF7A77800A9050E /* DailyWeatherItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB1C2AF7A77800A9050E /* DailyWeatherItemView.swift */; };
+		9A96A36D2AFA453C0044D260 /* BeforeYouGoAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96A36C2AFA453C0044D260 /* BeforeYouGoAppEnvironment.swift */; };
 		9ABA26ED2AF91C300098193E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9ABA26EC2AF91C300098193E /* Kingfisher */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		9A84BB182AF7868C00A9050E /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		9A84BB1A2AF793B500A9050E /* HourlyWeatherItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherItemView.swift; sourceTree = "<group>"; };
 		9A84BB1C2AF7A77800A9050E /* DailyWeatherItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherItemView.swift; sourceTree = "<group>"; };
+		9A96A36C2AFA453C0044D260 /* BeforeYouGoAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeYouGoAppEnvironment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,11 +124,12 @@
 		9A84BAD42AF4B79100A9050E /* BeforeYouGo */ = {
 			isa = PBXGroup;
 			children = (
-				9A84BB152AF7825000A9050E /* Extension */,
+				9A96A36C2AFA453C0044D260 /* BeforeYouGoAppEnvironment.swift */,
 				9A84BAD52AF4B79100A9050E /* BeforeYouGoApp.swift */,
 				9A84BB052AF50EC900A9050E /* View */,
 				9A84BB0D2AF66B7700A9050E /* UseCase */,
 				9A84BB102AF6703500A9050E /* Data */,
+				9A84BB152AF7825000A9050E /* Extension */,
 				9A84BADB2AF4B79300A9050E /* Assets.xcassets */,
 				9A84BB032AF50DE600A9050E /* Localizable.xcstrings */,
 				9A84BADD2AF4B79300A9050E /* Preview Content */,
@@ -345,6 +348,7 @@
 				9A84BB122AF6705C00A9050E /* Weather.swift in Sources */,
 				9A84BB1D2AF7A77800A9050E /* DailyWeatherItemView.swift in Sources */,
 				9A8283B22AF83F690072BF83 /* TimerView.swift in Sources */,
+				9A96A36D2AFA453C0044D260 /* BeforeYouGoAppEnvironment.swift in Sources */,
 				9A84BB0F2AF66E3800A9050E /* ForecastUseCase.swift in Sources */,
 				9A84BB192AF7868C00A9050E /* WeatherView.swift in Sources */,
 				9A84BADA2AF4B79100A9050E /* Item.swift in Sources */,

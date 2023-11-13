@@ -97,6 +97,9 @@
         }
       }
     },
+    "test" : {
+
+    },
     "Test" : {
 
     },
@@ -225,7 +228,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "霧氷"
+            "value" : "霧雪"
           }
         }
       }
@@ -259,7 +262,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "氷雨"
+            "value" : "みぞれ"
           }
         }
       }

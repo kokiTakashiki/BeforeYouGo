@@ -62,7 +62,7 @@ extension Weather {
         
         case .fog: return "🌫️"
         case .drizzle: return "🌦️"
-        case .freezingDrizzle: return "🌨️"
+        case .freezingDrizzle: return "🌦️"
         case .rain: return "☔️"
         
         case .freezingRain: return "🌨️"
@@ -85,10 +85,10 @@ extension Weather {
 
 //45, 48 霧🌫️Fog
 //51, 53, 55 霧雨🌦️Drizzle
-//56, 57 霧氷🌨️Freezing Drizzle
+//56, 57 霧雪🌦️Freezing Drizzle
 //61, 63, 65 雨☔️Rain
 
-//66, 67 氷雨🌨️Freezing Rain
+//66, 67 みぞれ🌨️Freezing Rain
 //71, 73, 75 雪⛄️Snow fall
 //77 あられ❄️Snow grains
 //80, 81, 82 にわか雨🌧Rain showers

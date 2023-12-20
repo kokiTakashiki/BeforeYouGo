@@ -46,6 +46,7 @@ jobs:
 
    - name: Build
      run: |
+       cd ../BeforeYouGo/
        xcodebuild build -scheme Debug
 
 #   - name: Test
@@ -54,5 +55,7 @@ jobs:
 
    - name: Perform CodeQL Analysis
      uses: github/codeql-action/analyze@v3
+     with: 
+       category: "/language:${{matrix.language}}"
      with: 
        category: "/language:${{matrix.language}}"

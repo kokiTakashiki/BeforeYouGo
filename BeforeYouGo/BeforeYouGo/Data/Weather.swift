@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum Weather: String, CaseIterable {
     case clearSky = "Weather.0.ClearSky" // ☀️0
@@ -73,6 +74,29 @@ extension Weather {
         case .thunderstorm: return "⛈️"
         
         case .unknown: return "✨"
+        }
+    }
+    
+    func imageResource(isDay: Bool = true) -> ImageResource {
+        switch self {
+        case .clearSky: return isDay ? .weather0ClearSky : .weather0ClearSkyNight
+        case .mainlyClear: return isDay ? .weather1MainlyClear : .weather1MainlyClearNight
+        case .partlyCloudy: return isDay ? .weather2PartlyCloudy : .weather2PartlyCloudyNight
+        case .overcast: return .weather3Overcast
+        
+        case .fog: return .weather45Fog
+        case .drizzle: return isDay ? .weather51Drizzle : .weather51DrizzleNight
+        case .freezingDrizzle: return isDay ? .weather56FreezingDrizzle : .weather56FreezingDrizzleNight
+        case .rain: return .weather61Rain
+        
+        case .freezingRain: return .weather66FreezingRain
+        case .snowfall: return .weather71Snowfall
+        case .snowGrains: return .weather77SnowGrains
+        case .rainShowers: return .weather80RainShowers
+        case .snowShowers: return .weather85SnowShowers
+        case .thunderstorm: return .weather95Thunderstorm
+        
+        case .unknown: return .noBackgroundIcon
         }
     }
 }

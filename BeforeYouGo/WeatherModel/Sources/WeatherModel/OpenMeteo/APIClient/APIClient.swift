@@ -13,36 +13,8 @@ extension OpenMeteo {
 }
 
 extension OpenMeteo.APIClient {
-    @discardableResult
-    private static func performRequest<T:Decodable>(
-        route: OpenMeteo.APIRouter,
-        decoder: JSONDecoder = JSONDecoder(),
-        completion:@escaping (Result<T, AFError>)->Void
-    ) -> DataRequest {
-        return AF.request(route)
-                .responseDecodable (decoder: decoder){ (response: DataResponse<T, AFError>) in
-                    completion(response.result)
-        }
-    }
-    
     private static func performRequest<T:Decodable>(route: OpenMeteo.APIRouter) async throws -> T {
         return try await AF.request(route).response()
-    }
-    
-    private static func validateCode(data: Data, response: URLResponse) throws -> Data {
-        switch (response as? HTTPURLResponse)?.statusCode {
-        case .some(let code) where code == 401:
-            throw NSError(domain: "Unauthorized", code: code)
-            
-        case .some(let code) where code == 404:
-            throw NSError(domain: "Not Found", code: code)
-            
-        case .none:
-            throw NSError(domain: "Irregular Error", code: 0)
-            
-        case .some:
-            return data
-        }
     }
     
     static func forecast(toshi: WeatherModel.Toshi) async throws -> WeatherForecastResponse {
@@ -76,13 +48,13 @@ extension DataRequest {
                 case .failure(let error):
                     switch error.responseCode {
                     case .some(let code) where code == 401:
-                        continuation.resume(throwing:  WeatherModel.APIServiceError.networkError)
+                        continuation.resume(throwing:  WeatherModel.APIServiceError.unauthorized)
                         
                     case .some(let code) where code == 404:
-                        continuation.resume(throwing: WeatherModel.APIServiceError.networkError)
+                        continuation.resume(throwing: WeatherModel.APIServiceError.notFound)
                         
                     case .none:
-                        continuation.resume(throwing: WeatherModel.APIServiceError.networkError)
+                        continuation.resume(throwing: WeatherModel.APIServiceError.irregularError)
                     case .some:
                         break
                     }

@@ -1,8 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "iconAppStore.png",
-      "idiom" : "tv"
+      "filename" : "noBackgroundIcon.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {

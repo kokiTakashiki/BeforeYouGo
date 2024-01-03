@@ -13,28 +13,33 @@ struct TimerView: View {
 
     // 現在日時の取得
     @State private var nowDate = Date()
-
-    // 表示形式、タイムゾーンの定義用
-    private let dateFormatter = DateFormatter()
     
-    init() {
-        dateFormatter.setTemplate("M/d EEEE H:m:s")
+    init(locale: Locale) {
+        if locale.language.languageCode == .japanese {
+            BeforeYouGoApp.dateFormatter.setTemplate("M/d EEEE H:m:s")
+        } else {
+            BeforeYouGoApp.dateFormatter.setTemplate("M/d E H:m:s")
+        }
     }
     
     var body: some View {
-        Text(displayTime.isEmpty ? "\(dateFormatter.string(from: nowDate))" : displayTime)
+        Text(displayTime.isEmpty ? "\(BeforeYouGoApp.dateFormatter.string(from: nowDate))" : displayTime)
             .font(.system(size: 50))
             .onAppear {
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
                     self.nowDate = Date()
-                    displayTime = "\(dateFormatter.string(from: nowDate))"
+                    displayTime = "\(BeforeYouGoApp.dateFormatter.string(from: nowDate))"
                 }
             }
     }
 }
 
 #Preview {
-    TimerView()
+    TimerView(locale: Locale(identifier: "EN"))
+}
+
+#Preview {
+    TimerView(locale: Locale(identifier: "Ja"))
 }
 
 extension DateFormatter {

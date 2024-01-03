@@ -38,12 +38,15 @@ protocol ForecastUseCaseProtocol {
 struct ForecastUseCase: ForecastUseCaseProtocol {
     func execute(toshi: ForecastUseCase.Toshi) async -> Result<WeatherInfo, UseCaseError>{
         do{
+#if DEBUG
             WeatherModel.startLogger()
+#endif
             let result = try await WeatherModel.forecast(toshi: toshi.exchange())
             return .success(
                 WeatherInfo(
                     current: WeatherInfo.Current(
                         time: result.current.time,
+                        date: result.current.time.dateFormatter(style: .dayAndTime),
                         temperature: result.current.temperature_2m,
                         relativehumidity: result.current.relativehumidity_2m, 
                         precipitation: result.current.precipitation,
@@ -52,7 +55,8 @@ struct ForecastUseCase: ForecastUseCaseProtocol {
                     ),
                     hourly: result.hourly.time.enumerated().map {
                         WeatherInfo.Hourly(
-                            time: $0.element, 
+                            time: $0.element,
+                            date: $0.element.dateFormatter(style: .dayAndTime) ,
                             isDay: ((result.hourly.is_day[safe: $0.offset] ?? 0) == 1),
                             precipitation: result.hourly.precipitation
                                 .indices.contains($0.offset) ? result.hourly.precipitation[$0.offset] : nil,
@@ -66,7 +70,8 @@ struct ForecastUseCase: ForecastUseCaseProtocol {
                     },
                     daily: result.daily.time.enumerated().map {
                         WeatherInfo.Daily(
-                            time: $0.element, 
+                            time: $0.element,
+                            date: $0.element.dateFormatter(style: .dayOnly),
                             precipitationSum: result.daily.precipitation_sum
                                 .indices.contains($0.offset) ? result.daily.precipitation_sum[$0.offset] : nil,
                             precipitationProbabilityMax: result.daily.precipitation_probability_max
@@ -90,6 +95,21 @@ struct ForecastUseCase: ForecastUseCaseProtocol {
             default:
                 return .failure(UseCaseError.unknownError)
             }
+        }
+    }
+}
+
+private extension String {
+    func dateFormatter(style: FormatMode) -> Date? {
+        switch style {
+        case .dayAndTime:
+            BeforeYouGoApp.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+            return BeforeYouGoApp.dateFormatter.date(from: self)
+        case .dayOnly:
+            BeforeYouGoApp.dateFormatter.dateFormat = "yyyy-MM-dd"
+            return BeforeYouGoApp.dateFormatter.date(from: self)
+        default:
+            return BeforeYouGoApp.dateFormatter.date(from: self)
         }
     }
 }

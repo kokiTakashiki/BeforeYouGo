@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct BeforeYouGoApp: App {
+    // Environment
+    static let dateFormatter = DateFormatter()
+    
     var body: some Scene {
         WindowGroup {
             RootView()

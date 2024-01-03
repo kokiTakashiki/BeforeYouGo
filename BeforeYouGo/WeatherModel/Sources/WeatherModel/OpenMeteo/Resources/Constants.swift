@@ -22,20 +22,9 @@ enum OpenMeteo {
     }
 }
 
-enum HTTPHeaderField: String {
-    case authentication = "Authorization"
-    case contentType = "Content-Type"
-    case acceptType = "Accept"
-    case acceptEncoding = "Accept-Encoding"
-}
-
-enum ContentType: String {
-    case json = "application/json"
-}
-
 extension WeatherModel {
-    public enum APIServiceError: Error{
-        case networkError, decodingError
+    public enum APIServiceError: Error {
+        case networkError, decodingError, unauthorized, notFound, irregularError
     }
     
     public enum Toshi {

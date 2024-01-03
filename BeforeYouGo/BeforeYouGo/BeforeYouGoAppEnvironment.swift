@@ -6,6 +6,10 @@
 //
 
 import SwiftUI
+struct DocumentsImages {
+    @DocumentsImage(filename: "backgroundImageDay.jpeg") var backgroundImageDay: UIImage?
+    @DocumentsImage(filename: "backgroundImageNight.jpeg") var backgroundImageNight: UIImage?
+}
 
 @Observable final class BeforeYouGoAppEnvironment {
     private let forecast: ForecastUseCaseProtocol = ForecastUseCase()
@@ -15,6 +19,7 @@ import SwiftUI
     
     var hourlyWeatherListPosition: String?
     var isHourlyWeatherListOnApper: Bool = false
+    @ObservationIgnored var documentsImages = DocumentsImages()
     
     func reloadWeather() {
         Task {

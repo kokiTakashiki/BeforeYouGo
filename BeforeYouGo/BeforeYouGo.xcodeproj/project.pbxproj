@@ -28,7 +28,13 @@
 		9A84BB1B2AF793B500A9050E /* HourlyWeatherItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB1A2AF793B500A9050E /* HourlyWeatherItemView.swift */; };
 		9A84BB1D2AF7A77800A9050E /* DailyWeatherItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BB1C2AF7A77800A9050E /* DailyWeatherItemView.swift */; };
 		9A96A36D2AFA453C0044D260 /* BeforeYouGoAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A96A36C2AFA453C0044D260 /* BeforeYouGoAppEnvironment.swift */; };
-		9ABA26ED2AF91C300098193E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9ABA26EC2AF91C300098193E /* Kingfisher */; };
+		9AB0AA852B3CA29D001245CC /* UnsplashPhotoPickerView_tvOS in Frameworks */ = {isa = PBXBuildFile; productRef = 9AB0AA842B3CA29D001245CC /* UnsplashPhotoPickerView_tvOS */; };
+		9AB0AA872B3DD930001245CC /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB0AA862B3DD930001245CC /* AppSettings.swift */; };
+		9AB0AA8C2B44735A001245CC /* DocumentsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB0AA8B2B44735A001245CC /* DocumentsImage.swift */; };
+		9AB0AA912B455AB9001245CC /* UnsplashPhotoPickerView_tvOS in Frameworks */ = {isa = PBXBuildFile; productRef = 9AB0AA902B455AB9001245CC /* UnsplashPhotoPickerView_tvOS */; };
+		9AB0AA942B455CC7001245CC /* UnsplashPhotoPickerView_tvOS in Frameworks */ = {isa = PBXBuildFile; productRef = 9AB0AA932B455CC7001245CC /* UnsplashPhotoPickerView_tvOS */; };
+		9AB0AA972B455D21001245CC /* UnsplashPhotoPickerView_tvOS in Frameworks */ = {isa = PBXBuildFile; productRef = 9AB0AA962B455D21001245CC /* UnsplashPhotoPickerView_tvOS */; };
+		9AFCB1D82B35F29200A177AF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFCB1D72B35F29200A177AF /* SettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +79,10 @@
 		9A84BB1A2AF793B500A9050E /* HourlyWeatherItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherItemView.swift; sourceTree = "<group>"; };
 		9A84BB1C2AF7A77800A9050E /* DailyWeatherItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherItemView.swift; sourceTree = "<group>"; };
 		9A96A36C2AFA453C0044D260 /* BeforeYouGoAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeYouGoAppEnvironment.swift; sourceTree = "<group>"; };
+		9AB0AA822B3CA288001245CC /* UnsplashPhotoPickerView_tvOS */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = UnsplashPhotoPickerView_tvOS; sourceTree = "<group>"; };
+		9AB0AA862B3DD930001245CC /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		9AB0AA8B2B44735A001245CC /* DocumentsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsImage.swift; sourceTree = "<group>"; };
+		9AFCB1D72B35F29200A177AF /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +90,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ABA26ED2AF91C300098193E /* Kingfisher in Frameworks */,
+				9AB0AA912B455AB9001245CC /* UnsplashPhotoPickerView_tvOS in Frameworks */,
+				9AB0AA852B3CA29D001245CC /* UnsplashPhotoPickerView_tvOS in Frameworks */,
+				9AB0AA972B455D21001245CC /* UnsplashPhotoPickerView_tvOS in Frameworks */,
+				9AB0AA942B455CC7001245CC /* UnsplashPhotoPickerView_tvOS in Frameworks */,
 				9A84BB092AF51B7300A9050E /* WeatherModel in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +137,7 @@
 		9A84BAC92AF4B79100A9050E = {
 			isa = PBXGroup;
 			children = (
+				9AB0AA822B3CA288001245CC /* UnsplashPhotoPickerView_tvOS */,
 				9A84BB062AF51B4200A9050E /* WeatherModel */,
 				9A84BAD42AF4B79100A9050E /* BeforeYouGo */,
 				9A84BAE72AF4B79300A9050E /* BeforeYouGoTests */,
@@ -191,6 +205,7 @@
 				9A84BAD72AF4B79100A9050E /* ContentView.swift */,
 				9A84BAD92AF4B79100A9050E /* Item.swift */,
 				9A4579F22AFD23BC00E9064C /* WeatherView */,
+				9AFCB1D72B35F29200A177AF /* SettingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,6 +223,7 @@
 			children = (
 				9A84BB112AF6705C00A9050E /* Weather.swift */,
 				9A84BB132AF77C2400A9050E /* WeatherInfo.swift */,
+				9AB0AA862B3DD930001245CC /* AppSettings.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -218,6 +234,14 @@
 				9A84BB162AF7828900A9050E /* Collection+safeIndex.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		9AB0AA8A2B447313001245CC /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				9AB0AA8B2B44735A001245CC /* DocumentsImage.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +262,10 @@
 			name = BeforeYouGo;
 			packageProductDependencies = (
 				9A84BB082AF51B7300A9050E /* WeatherModel */,
-				9ABA26EC2AF91C300098193E /* Kingfisher */,
+				9AB0AA842B3CA29D001245CC /* UnsplashPhotoPickerView_tvOS */,
+				9AB0AA902B455AB9001245CC /* UnsplashPhotoPickerView_tvOS */,
+				9AB0AA932B455CC7001245CC /* UnsplashPhotoPickerView_tvOS */,
+				9AB0AA962B455D21001245CC /* UnsplashPhotoPickerView_tvOS */,
 			);
 			productName = BeforeYouGo;
 			productReference = 9A84BAD22AF4B79100A9050E /* BeforeYouGo.app */;
@@ -315,7 +342,7 @@
 			mainGroup = 9A84BAC92AF4B79100A9050E;
 			packageReferences = (
 				9A84BB072AF51B7300A9050E /* XCLocalSwiftPackageReference "WeatherModel" */,
-				9ABA26EB2AF91C300098193E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				9AB0AA952B455D21001245CC /* XCLocalSwiftPackageReference "UnsplashPhotoPickerView_tvOS" */,
 			);
 			productRefGroup = 9A84BAD32AF4B79100A9050E /* Products */;
 			projectDirPath = "";
@@ -372,6 +399,8 @@
 				9A84BB0F2AF66E3800A9050E /* ForecastUseCase.swift in Sources */,
 				9A84BB192AF7868C00A9050E /* WeatherView.swift in Sources */,
 				9A84BADA2AF4B79100A9050E /* Item.swift in Sources */,
+				9AB0AA872B3DD930001245CC /* AppSettings.swift in Sources */,
+				9AB0AA8C2B44735A001245CC /* DocumentsImage.swift in Sources */,
 				9A84BAD62AF4B79100A9050E /* BeforeYouGoApp.swift in Sources */,
 				9A84BB1B2AF793B500A9050E /* HourlyWeatherItemView.swift in Sources */,
 			);
@@ -715,28 +744,32 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = WeatherModel;
 		};
-/* End XCLocalSwiftPackageReference section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		9ABA26EB2AF91C300098193E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.10.0;
-			};
+		9AB0AA952B455D21001245CC /* XCLocalSwiftPackageReference "UnsplashPhotoPickerView_tvOS" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = UnsplashPhotoPickerView_tvOS;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		9A84BB082AF51B7300A9050E /* WeatherModel */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WeatherModel;
 		};
-		9ABA26EC2AF91C300098193E /* Kingfisher */ = {
+		9AB0AA842B3CA29D001245CC /* UnsplashPhotoPickerView_tvOS */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9ABA26EB2AF91C300098193E /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
+			productName = UnsplashPhotoPickerView_tvOS;
+		};
+		9AB0AA902B455AB9001245CC /* UnsplashPhotoPickerView_tvOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UnsplashPhotoPickerView_tvOS;
+		};
+		9AB0AA932B455CC7001245CC /* UnsplashPhotoPickerView_tvOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UnsplashPhotoPickerView_tvOS;
+		};
+		9AB0AA962B455D21001245CC /* UnsplashPhotoPickerView_tvOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UnsplashPhotoPickerView_tvOS;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

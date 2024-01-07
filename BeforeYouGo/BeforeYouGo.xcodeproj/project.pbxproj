@@ -12,8 +12,6 @@
 		9A474EE02B08F191001E3A2F /* FormatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A474EDF2B08F191001E3A2F /* FormatStyle.swift */; };
 		9A8283B22AF83F690072BF83 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8283B12AF83F690072BF83 /* TimerView.swift */; };
 		9A84BAD62AF4B79100A9050E /* BeforeYouGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BAD52AF4B79100A9050E /* BeforeYouGoApp.swift */; };
-		9A84BAD82AF4B79100A9050E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BAD72AF4B79100A9050E /* ContentView.swift */; };
-		9A84BADA2AF4B79100A9050E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BAD92AF4B79100A9050E /* Item.swift */; };
 		9A84BADC2AF4B79300A9050E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A84BADB2AF4B79300A9050E /* Assets.xcassets */; };
 		9A84BADF2AF4B79300A9050E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A84BADE2AF4B79300A9050E /* Preview Assets.xcassets */; };
 		9A84BAE92AF4B79300A9050E /* BeforeYouGoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A84BAE82AF4B79300A9050E /* BeforeYouGoTests.swift */; };
@@ -63,8 +61,6 @@
 		9A8283B12AF83F690072BF83 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		9A84BAD22AF4B79100A9050E /* BeforeYouGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeforeYouGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A84BAD52AF4B79100A9050E /* BeforeYouGoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeYouGoApp.swift; sourceTree = "<group>"; };
-		9A84BAD72AF4B79100A9050E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		9A84BAD92AF4B79100A9050E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		9A84BADB2AF4B79300A9050E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A84BADE2AF4B79300A9050E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9A84BAE42AF4B79300A9050E /* BeforeYouGoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeforeYouGoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,8 +202,6 @@
 			children = (
 				9A4357252B0251EE0091CF2F /* UIParts */,
 				9A84BB012AF4B94A00A9050E /* RootView.swift */,
-				9A84BAD72AF4B79100A9050E /* ContentView.swift */,
-				9A84BAD92AF4B79100A9050E /* Item.swift */,
 				9A4579F22AFD23BC00E9064C /* WeatherView */,
 				9AFCB1D72B35F29200A177AF /* SettingView.swift */,
 			);
@@ -396,7 +390,6 @@
 				9A4579F42AFD24CA00E9064C /* VisualEffect.swift in Sources */,
 				9A84BB022AF4B94A00A9050E /* RootView.swift in Sources */,
 				9A84BB142AF77C2400A9050E /* WeatherInfo.swift in Sources */,
-				9A84BAD82AF4B79100A9050E /* ContentView.swift in Sources */,
 				9A474EE02B08F191001E3A2F /* FormatStyle.swift in Sources */,
 				9A84BB172AF7828900A9050E /* Collection+safeIndex.swift in Sources */,
 				9A84BB122AF6705C00A9050E /* Weather.swift in Sources */,
@@ -405,7 +398,6 @@
 				9A96A36D2AFA453C0044D260 /* BeforeYouGoAppEnvironment.swift in Sources */,
 				9A84BB0F2AF66E3800A9050E /* ForecastUseCase.swift in Sources */,
 				9A84BB192AF7868C00A9050E /* WeatherView.swift in Sources */,
-				9A84BADA2AF4B79100A9050E /* Item.swift in Sources */,
 				9A474EDE2B08F0F8001E3A2F /* Date+displayDateFormatter.swift in Sources */,
 				9AB0AA872B3DD930001245CC /* AppSettings.swift in Sources */,
 				9AB0AA8C2B44735A001245CC /* DocumentsImage.swift in Sources */,

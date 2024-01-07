@@ -16,19 +16,19 @@ struct TimerView: View {
     
     init(locale: Locale) {
         if locale.language.languageCode == .japanese {
-            BeforeYouGoApp.dateFormatter.setTemplate("M/d EEEE H:m:s")
+            BeforeYouGoApp.timerDateFormatter.setTemplate("M/d EEEE H:m:s")
         } else {
-            BeforeYouGoApp.dateFormatter.setTemplate("M/d E H:m:s")
+            BeforeYouGoApp.timerDateFormatter.setTemplate("M/d E H:m:s")
         }
     }
     
     var body: some View {
-        Text(displayTime.isEmpty ? "\(BeforeYouGoApp.dateFormatter.string(from: nowDate))" : displayTime)
+        Text(displayTime.isEmpty ? "\(BeforeYouGoApp.timerDateFormatter.string(from: nowDate))" : displayTime)
             .font(.system(size: 50))
             .onAppear {
                 Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
                     self.nowDate = Date()
-                    displayTime = "\(BeforeYouGoApp.dateFormatter.string(from: nowDate))"
+                    displayTime = "\(BeforeYouGoApp.timerDateFormatter.string(from: nowDate))"
                 }
             }
     }

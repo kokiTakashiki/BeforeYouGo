@@ -11,16 +11,16 @@ extension Date {
     func displayDateFormatter(style: FormatMode) -> String? {
         switch style {
         case .time:
-            BeforeYouGoApp.dateFormatter.dateFormat = "HH:mm"
-            return BeforeYouGoApp.dateFormatter.string(from: self)
+            BeforeYouGoApp.displayDateFormatter.dateFormat = "HH:mm"
+            return BeforeYouGoApp.displayDateFormatter.string(from: self)
         case .dayShort:
-            BeforeYouGoApp.dateFormatter.dateFormat = "M/d E"
-            return BeforeYouGoApp.dateFormatter.string(from: self)
+            BeforeYouGoApp.displayDateFormatter.dateFormat = "M/d E"
+            return BeforeYouGoApp.displayDateFormatter.string(from: self)
         case .dayFull:
-            BeforeYouGoApp.dateFormatter.dateFormat = "M/d EEEE"
-            return BeforeYouGoApp.dateFormatter.string(from: self)
+            BeforeYouGoApp.displayDateFormatter.dateFormat = "M/d EEEE"
+            return BeforeYouGoApp.displayDateFormatter.string(from: self)
         default:
-            return BeforeYouGoApp.dateFormatter.string(from: self)
+            return BeforeYouGoApp.displayDateFormatter.string(from: self)
         }
     }
 }

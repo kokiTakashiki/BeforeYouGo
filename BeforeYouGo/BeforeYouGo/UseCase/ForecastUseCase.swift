@@ -103,13 +103,13 @@ private extension String {
     func dateFormatter(style: FormatMode) -> Date? {
         switch style {
         case .dayAndTime:
-            BeforeYouGoApp.dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
-            return BeforeYouGoApp.dateFormatter.date(from: self)
+            BeforeYouGoApp.forecastUseCaseDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+            return BeforeYouGoApp.forecastUseCaseDateFormatter.date(from: self)
         case .dayOnly:
-            BeforeYouGoApp.dateFormatter.dateFormat = "yyyy-MM-dd"
-            return BeforeYouGoApp.dateFormatter.date(from: self)
+            BeforeYouGoApp.forecastUseCaseDateFormatter.dateFormat = "yyyy-MM-dd"
+            return BeforeYouGoApp.forecastUseCaseDateFormatter.date(from: self)
         default:
-            return BeforeYouGoApp.dateFormatter.date(from: self)
+            return BeforeYouGoApp.forecastUseCaseDateFormatter.date(from: self)
         }
     }
 }

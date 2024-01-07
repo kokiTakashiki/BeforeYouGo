@@ -10,7 +10,10 @@ import SwiftUI
 @main
 struct BeforeYouGoApp: App {
     // Environment
-    static let dateFormatter = DateFormatter()
+    static let displayDateFormatter = DateFormatter()
+    static let timerDateFormatter = DateFormatter()
+    static let forecastUseCaseDateFormatter = DateFormatter()
+    
     
     var body: some Scene {
         WindowGroup {
